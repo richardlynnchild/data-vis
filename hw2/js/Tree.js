@@ -13,17 +13,14 @@ class Tree {
             // Create the new Node
             let node = new Node(d.name,d.parent);
             tempNodes.push(node);
-            console.log("Added node!")
             // Search for parent Node object and make a reference
             tempNodes.forEach(function(n){
                 if (n.name == node.parentName){
-                    console.log("Found their parent!")
                     node.parentNode = n;
                 }
             });
         });
         this.nodes = tempNodes.slice(0);
-        console.log(this.nodes)
     }
 
     /**
@@ -42,9 +39,6 @@ class Tree {
                 this.assignLevel(node,0);
                 this.assignPosition(node,0);
             }
-        }
-        for(let node of this.nodes){
-            console.log(node.name +"("+node.level+", "+node.position+")");
         }
     }
 
@@ -73,10 +67,18 @@ class Tree {
      * Recursive function that assign positions to each node
      */
     assignPosition(node, position) {
-        node.position = node.level*100+this.nodeId++;
-        for (let child of node.children){
-            this.assignPosition(child,this.nodeId);
+        let childPosition = 0;
+        if(node.children.length == 0){
+            node.position = node.level*100+this.nodeId++;
+            return node.position;
         }
+        for(let child of node.children){
+            childPosition = this.assignPosition(child,position);
+            if (node.position == -1){
+                node.position = childPosition-100;
+            }
+        }
+        return node.position;
     }
 
     /**
