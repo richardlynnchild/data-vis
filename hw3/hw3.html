@@ -30,7 +30,7 @@
         /* style of line charts */
         .line-chart {
             stroke: #086fad;
-            stroke-width: 0.05;
+            stroke-width: 0.1;
             fill: none;
         }
 
@@ -74,26 +74,28 @@
             grid-template-columns: 1fr 1fr;
         }
     </style>
+    <script src="script.js"></script>
+    <script src="https://d3js.org/d3.v5.js"></script>
 </head>
 
-<body>
+<body onload="changeData()">
 <h3>CS-5630 / CS-6630 Homework 3</h3>
 <address>
-    <span>Your Name</span>
-    <span>Your Email</span>
-    <span>Your UID</span>
+    <span>Richard Child</span><br/>
+    <span>u0581030@utah.edu</span><br/>
+    <span>u0581030</span><br/>
 </address>
 <br/>
 <hr/>
 <br/>
 
 <span>
-      <button>Staircase</button>
+      <button id="staircase" onclick="staircase()">Staircase</button>
     </span>
 
 <span>
       <label>Dataset:</label>
-      <select id="dataset">
+      <select id="dataset" onchange="changeData()">
         <option value="anscombe_I">Anscombe's Quartet I</option>
         <option selected value="anscombe_II">Anscombe's Quartet II</option>
         <option value="anscombe_III">Anscombe's Quartet III</option>
@@ -101,14 +103,14 @@
       </select>
     </span>
 
-<span> <input type="checkbox" id="random"/> Random Subset </span>
+<span> <input type="checkbox" id="random" onchange="changeData()"/> Random Subset </span>
 
 <br/>
 
 <div class="row">
     <div>
         <h2>Bar Charts</h2>
-        <div>
+        <div id="bars">
             <svg class="bar-chart" width="350" height="220">
                 <g class="bar-chart-x" id="aBarChart" transform="translate(332, 0)">
                     <rect
@@ -169,8 +171,7 @@
                 </g>
             </svg>
             <svg class="bar-chart" width="350" height="220">
-                <g class="bar-chart-y" id="bBarChart"
-                ">
+                <g class="bar-chart-y" id="bBarChart">
                 <rect width="8.04" height="18" transform="translate(0, 0)"/>
                 <rect width="6.95" height="18" transform="translate(0, 20)"/>
                 <rect width="7.58" height="18" transform="translate(0, 40)"/>
@@ -193,7 +194,7 @@
             <g transform="translate(0, 300) scale(15, -15)">
                 <path
                         id="aLineChart"
-                        d="M 0 10 L 1 8 L 2 13 L 3 9 L 4 11 L 5 14 L 6 6 L 7 4 L 8 12 L 9 7 L 10 5"
+                        d="M0,10L1,8L2,13L3,9L4,11L5,14L6,6L7,4L8,12L9,7L10,5"
                 />
             </g>
         </svg>
