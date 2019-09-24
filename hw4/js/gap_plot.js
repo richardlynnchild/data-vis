@@ -54,6 +54,7 @@ class GapPlot {
         this.drawYearBar();
         this.updatePlot(activeYear, "gdp", "child-mortality", "fertility-rate");
 
+
         // ******* TODO: PART 3 *******
         /**
          For part 4 of the homework, you will be using the other 3 parameters.
@@ -74,8 +75,8 @@ class GapPlot {
         // ******* TODO: PART 2 *******
         /**
          You will be setting up the plot for the scatterplot.
-         Here you will create axes for the x and y data that you will be 
-         selecting and calling in updatePlot (hint): class them.
+         Here you will create axes for the x and y data that you will be selecting and calling in updatePlot
+         (hint): class them.
 
          Main things you should set up here:
          1). Create the x and y axes
