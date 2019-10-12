@@ -46,7 +46,6 @@ class Map {
     drawMap(world) {
         //note that projection is global!
 
-        // ******* TODO: PART I *******
         // Draw the background (country outlines; hint: use #map-chart)
         // Make sure to add a graticule (gridlines) and an outline to the map
 
@@ -62,12 +61,7 @@ class Map {
         //TODO - Your code goes here - 
 
 
-        // console.log(geojson.features);
-        // console.log(this.populationData);
-        //console.log(this.nameArray);
-
         let geojson = topojson.feature(world, world.objects.countries);
-
         let countryData = geojson.features.map(country => {
 
             let index = this.nameArray.indexOf(country.id);
@@ -86,6 +80,7 @@ class Map {
 
         console.log(countryData);
 
+<<<<<<< HEAD
         console.log(countryData[7].region);
 
         d3.select('#map-chart').append('svg');
@@ -121,7 +116,6 @@ class Map {
             .datum(graticule.outline)
             .attr("d",path)
             .attr("class","stroke");
-
     }
 
     /**
