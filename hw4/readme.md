@@ -137,6 +137,10 @@ This gif shows the desired behavior:
 
 ### 2.3 The Year Slider
 The year slider will call the `updatePlot()` function on drag. When you move the slider, you should be able to watch the bubbles in the plot move and update. The year slider is provided for you, but you will have to set up the `updatePlot()` function call to pass the new year to draw the plot. Remember the years range from **1800 to 2020**. When the users changes the years slider, call the `updateYear(year)` callback to notify the relevant views.  
+<<<<<<< HEAD
+=======
+
+>>>>>>> f22c6d7968b029170878bed2863e099eeb10ec29
 This gif shows the desired behavior: 
 
 ![Gap Plot Year Slider](figs/year_slider.gif)
