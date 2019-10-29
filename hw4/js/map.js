@@ -79,8 +79,6 @@ class Map {
         });
 
         console.log(countryData);
-
-<<<<<<< HEAD
         console.log(countryData[7].region);
 
         d3.select('#map-chart').append('svg');

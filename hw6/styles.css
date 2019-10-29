@@ -1,0 +1,37 @@
+#header-wrap {
+    width: 100%;
+}
+
+.chart-view {
+    margin: 10px;
+    float: left;
+}
+
+.table-view {
+    margin-top: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+}
+
+.chart-tooltip {
+    position: absolute;			
+    text-align: center;			
+    width: 140px;					
+    height: 45px;					
+    padding: 2px;				
+    font: 12px sans-serif;
+    font-weight: bold;		
+    background: lightgrey;	
+    border: 0px;		
+    border-radius: 4px;			
+}
+
+button {
+    margin: 10px;
+    float: top;
+}
+
+text, thead{
+    font-size: 18px;
+}
